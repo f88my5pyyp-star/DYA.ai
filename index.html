@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DYA.ai - Kid's Art Transform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=DynaPuff:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #launchScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+    #launchScreen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Launch Screen Overlay -->
+  <div id="launchScreen">
+    <img src="logo.png" alt="DYA.ai Logo" style="width: 220px; height: auto; object-fit: contain; margin-bottom: 25px; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15));">
+    <h1 style="margin: 0; font-family: 'DynaPuff', cursive, sans-serif; font-size: 42px; display: flex; align-items: center; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
+      <span style="color: #D81B60;">D</span>
+      <span style="color: #FB8C00;">Y</span>
+      <span style="color: #8E24AA;">A</span>
+      <span style="color: #00E676;">.</span>
+      <span style="color: #00B0FF;">a</span>
+      <span style="color: #7C4DFF;">i</span>
+    </h1>
+  </div>
+
+  <!-- Visually Polished Header Banner (Logo removed) -->
+  <header style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 16px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.4);">
+    <h1 style="margin: 0; font-family: 'DynaPuff', cursive, sans-serif; font-size: 32px; letter-spacing: 0.5px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); display: flex; align-items: center; line-height: 1;">
+      <span style="color: #D81B60;">D</span>
+      <span style="color: #FB8C00;">Y</span>
+      <span style="color: #8E24AA;">A</span>
+      <span style="color: #00E676;">.</span>
+      <span style="color: #00B0FF;">a</span>
+      <span style="color: #7C4DFF;">i</span>
+    </h1>
+    <div style="font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #555; background: rgba(255, 255, 255, 0.7); padding: 8px 16px; border-radius: 20px; backdrop-filter: blur(5px); box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+      ✨ Turn Kids' Art into Masterpieces
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main style="padding: 30px; max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <label for="drawingInput" style="background: linear-gradient(135deg, #FF4081, #FF6E40); color: white; padding: 14px 28px; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(255, 64, 129, 0.4); display: inline-block; transition: transform 0.2s;">
+        ✨ Upload Drawing
+      </label>
+      <input type="file" id="drawingInput" accept="image/*" style="display: none;">
+    </div>
+    <div id="galleryGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
